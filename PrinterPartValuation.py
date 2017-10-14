@@ -84,7 +84,7 @@ class PartValuation:
     def get_raw_cost(self):
         return self.get_labor_costs() + self.get_material_costs() + self.get_total_energy_cost() + self.get_cure_cost()
     def get_customer_adjusted_cost(self):
-        return (self.get_markup() * self.get_raw_cost()) * self.get_discount_coef()
+        return ((1+self.get_markup()) * self.get_raw_cost()) * (1 - self.get_discount_coef())
     def get_total_cost(self): # adjusted for tax and shipping_cost
         return (self.get_customer_adjusted_cost() * (1 + self.AZ_TAX_RATE)) + self.shipping_cost.value
     def get_spools_needed(self):
