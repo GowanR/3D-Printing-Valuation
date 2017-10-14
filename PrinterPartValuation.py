@@ -92,7 +92,7 @@ class PartValuation:
     def get_total_profit(self):
         return self.get_customer_adjusted_cost() - self.get_raw_cost()
     def get_profit_margin(self):
-        return self.get_total_profit() / self.get_customer_adjusted_cost()
+        return self.get_customer_adjusted_cost() / self.get_raw_cost()
     def get_preparation_time(self):
         return self.model_clean_up + self.slice_time + self.material_change
     def get_post_processing_time(self):
